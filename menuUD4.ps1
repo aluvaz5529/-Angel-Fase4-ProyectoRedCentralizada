@@ -3,13 +3,10 @@ $gruposCsv=Read-Host "Introduce el fichero csv de Grupos"
 $fichero = import-csv -Path $gruposCsv -delimiter :
 foreach($linea in $fichero)
 
-
 	New-ADGroup -Name:$linea.Name -Description:$linea.Description -GroupCategory:$linea.Category -GroupScope:$linea.Scope -Path:$linea.Path
-
-
 }
 
-param red
+param red{
 $SU = 'F:\ruta servicios universitarios'
 $RE = 'F:\ruto rectorado'
 $SE = 'F:\ruta secretaria'
@@ -36,10 +33,7 @@ New-SmbShare -Name carpetacompartida3 -Path $SE -WriteAccess Cs_GL_RSecretaria -
 New-SmbShare -Name carpetacompartida4 -Path $IN -WriteAccess Cs_GL_RInformatica -ReadAccess Cs_GL_WInformatica` -ChangeAccess Cs_GL_RInformatica 
 -ConcurrentUserLimit 29 `
 -Description "Carpeta publico para el acceso de usuarios de informatica"
-
-
-
-
+}
 
 
 function mostrarMenu 
