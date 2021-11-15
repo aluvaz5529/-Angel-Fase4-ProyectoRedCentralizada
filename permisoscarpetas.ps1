@@ -46,7 +46,7 @@ New-SmbShare -Name carpetacompartida -Path $SU -WriteAccess Cs_GL_WServicios_U -
 -ConcurrentUserLimit 28 `
 -Description "Carpeta publico para el acceso de usuarios"
 
-#versión 4 final (si no funciona quitar las comillas de readacces al final)
+#versión 4 final (si no funciona quitar las comillas de readacces al final)#####################################
 $SU = 'F:\ruta servicios universitarios'
 $RE = 'F:\ruto rectorado'
 $SE = 'F:\ruta secretaria'
