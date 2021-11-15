@@ -19,3 +19,10 @@ $acl | Set-Acl -Path $ruta
 #$acl.Access
 #get-acl $ruta | fl
 
+#quitar permisos
+#$ruta = 'F:\Publico'
+#$acl = Get-Acl -Path $ruta
+#$AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule ("SMR_GL_R_DirPublico", "Read", "Allow")
+#$acl.RemoveAccessRule ($AccessRule)
+#$acl | Set-Acl -Path $ruta
+
