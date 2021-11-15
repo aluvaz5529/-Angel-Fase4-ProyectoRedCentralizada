@@ -1,0 +1,14 @@
+:Path:Description:Category:Scope
+:Cs_GL_WServicios_U:OU=Servicios_Universitarios,OU=Ubuntu,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de escritura de los servicios universitarios de upv:Security:Domainlocal
+:Cs_GL_RServicios_U:OU=Servicios_Universitarios,OU=Ubuntu,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de lectura de los servicios universitarios de upv:Security:Domainlocal
+:Cs_GL_WRectorado:OU=Rectorado,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de escritura del rectorado de upv:Security:Domainlocal
+:Cs_GL_RRectorado:OU=Rectorado,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de lectura del rectorado de upv:Security:Domainlocal
+:Cs_GL_WSecretaria:OU=Secretaria,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de escritura de secretaria de upv:Security:Domainlocal
+:Cs_GL_RSecretaria:OU=Secretaria,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de lectura de secretaria de upv:Security:Domainlocal
+:Cs_GL_WInformatica:OU=Informatica,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de escritura del aula de informatica de upv:Security:Domainlocal
+:Cs_GL_RInformatica:OU=Informatica,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de lectura del aula de informatica de upv:Security:Domainlocal
+#A partir de aqui son los globales
+:Cs_GG_Servicios_U:OU=Servicios_Universitarios,OU=Ubuntu,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo global de los servicios universitarios de upv:Security:Global
+:Cs_GG_Rectorado:OU=Rectorado,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo grobal del rectorado de upv:Security:Global
+:Cs_GG_Secretaria:OU=Secretaria,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo global de secretaria de upv:Security:Global
+:Cs_GG_Informatica:OU=Informatica,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo global del aula de informatica de upv:Security:Global
