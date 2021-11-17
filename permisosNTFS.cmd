@@ -23,10 +23,14 @@ REM
 REM Aplicamos las ACLs
 REM https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/icacls
 
-icacls F:\departamentos_cs\Servicios_U /GRANT castellon\Servicios_U:(R,W)
-icacls F:\departamentos_cs\Rectorado /GRANT castellon\Rectorado:(R,W)
-icacls F:\departamentos_cs\Secretaria /GRANT castellon\Secretaria:(R,W)
-icacls F:\departamentos_cs\Informatica /GRANT castellon\Informatica:(R,W)
+icacls F:\departamentos_cs\Servicios_U /GRANT castellon\Cs_GL_WServicios_U:W
+icacls F:\departamentos_cs\Servicios_U /GRANT castellon\Cs_GL_RServicios_U:R
+icacls F:\departamentos_cs\Rectorado /GRANT castellon\Cs_GL_RRectorado:R
+icacls F:\departamentos_cs\Rectorado /GRANT castellon\Cs_GL_WRectorado:W
+icacls F:\departamentos_cs\Secretaria /GRANT castellon\Cs_GL_RSecretaria:R
+icacls F:\departamentos_cs\Secretaria /GRANT castellon\Cs_GL_WSecretaria:W
+icacls F:\departamentos_cs\Informatica /GRANT castellon\Cs_GL_RInformatica:R
+icacls F:\departamentos_cs\Informatica /GRANT castellon\Cs_GL_WInformatica:W
 
 REM Eliminamos los permisos asignados al grupo 'Usuarios del dominio'
 REM /inheritancelevel: [e - d - r]
@@ -46,4 +50,3 @@ icacls F:\departamentos_cs\Servicios_U /GRANT castellon\Cs_GL_castellon:(R)
 icacls F:\departamentos_cs\Rectorado /GRANT castellon\Cs_GL_castellon:(R)
 icacls F:\departamentos_cs\Secretaria /GRANT castellon\Cs_GL_castellon:(R)
 icacls F:\departamentos_cs\Informatica /GRANT castellon\Cs_GL_castellon:(R)
-
