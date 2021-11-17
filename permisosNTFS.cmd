@@ -56,54 +56,25 @@ net share D_Departamentos=F:\Departamentos_cs /GRANT:Cs_GL_GGcastellon,DC=castel
 
 
 
-REM no funciona
-
+REM funciona hasta lo de compartir
 @echo off
 REM Comprobamos si existen las carpetas, en caso contrario las creamos
 if NOT EXIST F:\departamentos_cs mkdir F:\departamentos_cs
-if NOT EXIST F:\departamentos_cs\Servicios_U mkdir F:\departamentos_cs\Servicios_U
+if NOT EXIST F:\departamentos_cs\Servicios_U mkdir F:\departamentos_cs\Servicios_Universitarios
 if NOT EXIST F:\departamentos_cs\Rectorado mkdir F:\departamentos_cs\Rectorado
 if NOT EXIST F:\departamentos_cs\Secretaria mkdir F:\departamentos_cs\Secretaria
 if NOT EXIST F:\departamentos_cs\Servicios mkdir F:\departamentos_cs\Informatica
 REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtraremos los accesos 
-net share D_Servicios_Universitarios=F:\departamentos_cs\Servicios_Universitarios /GRANT:Cs_GG_Servicios_U,DC=castellon,DC=upv,DC=es,full
-net share D_Servicios_Universitarios=F:\departamentos_cs\Servicios_Universitarios /GRANT:Cs_GL_WServicios_U,DC=castellon,DC=upv,DC=es,write
-net share D_Servicios_Universitarios=F:\departamentos_cs\Servicios_Universitarios /GRANT:Cs_GL_RServicios_U,DC=castellon,DC=upv,DC=es,read
-net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GG_Rectorado,DC=castellon,DC=upv,DC=es,full
-net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_WRectorado,DC=castellon,DC=upv,DC=es,write
-net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_RRectorado,DC=castellon,DC=upv,DC=es,read
-net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GG_Secretaria,DC=castellon,DC=upv,DC=es,full
-net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GL_WSecretaria,DC=castellon,DC=upv,DC=es,write
-net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GL_RSecretaria,DC=castellon,DC=upv,DC=es,read
-net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GG_Informatica,DC=castellon,DC=upv,DC=es,full
-net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GL_WInformatica,DC=castellon,DC=upv,DC=es,write
-net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GL_RInformatica,DC=castellon,DC=upv,DC=es,read
-REM 
-REM Aplicamos las ACLs
-REM https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/icacls
-
-icacls F:\\Dirección /GRANT smr\Dirección:(R,W)
-icacls F:\\Finanzas /GRANT smr\Finanzas:(R,W)
-icacls F:\\Producción /GRANT smr\Producción:(R,W)
-icacls F:\\Servicios /GRANT smr\Servicios:(R,W)
-icacls F:\\Ventas /GRANT smr\Ventas:(R,W)
-REM Eliminamos los permisos asignados al grupo 'Usuarios del dominio'
-REM /inheritancelevel: [e - d - r]
-REM     e: Enables inheritance - d: Disables inheritance and copies the ACESS - r: Removes all inherited ACESS
-
-icacls F:\\Dirección /inheritance:d /T
-icacls F:\\Dirección /remove:g Usuarios
-icacls F:\\Finanzas /inheritance:d /T
-icacls F:\\Finanzas /remove:g Usuarios
-icacls F:\\Producción /inheritance:d /T
-icacls F:\\Producción /remove:g Usuarios
-icacls F:\\Servicios /inheritance:d /T
-icacls F:\\Servicios /remove:g Usuarios
-icacls F:\\Ventas /inheritance:d /T
-icacls F:\\Ventas /remove:g Usuarios
-REM Añadimos el permiso extra del grupo Acceso_extra
-icacls F:\\Dirección /GRANT smr\Acceso_extra:(R)
-icacls F:\\Finanzas /GRANT smr\Acceso_extra:(R)
-icacls F:\\Producción /GRANT smr\Acceso_extra:(R)
-icacls F:\\Servicios /GRANT smr\Acceso_extra:(R)
-icacls F:\\Ventas /GRANT smr\Acceso_extra:(R)
+net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GG_Servicios_U,full
+net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GG_RServicios_U,read
+net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GL_WServicios_U,write
+net share D_Servicios_Universitarios=F:\departamentos_cs\Servicios_U /GRANT:Cs_GL_RServicios_U,full
+net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GG_Rectorado,full
+net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_WRectorado,write
+net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_RRectorado,read
+net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GG_Secretaria,full
+net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GL_WSecretaria,write
+net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GL_RSecretaria,read
+net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GG_Informatica,full
+net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GL_WInformatica,write
+net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GL_RInformatica,read
