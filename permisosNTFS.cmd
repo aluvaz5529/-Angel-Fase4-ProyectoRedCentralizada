@@ -42,7 +42,7 @@ net share D_Departamentos=F:\Departamentos_cs /GRANT:Cs_GL_GGcastellon,read
 
 
 
-REM funciona hasta lo de compartir
+REM funciona hasta lo de compartir probar por si funciona
 @echo off
 REM Comprobamos si existen las carpetas, en caso contrario las creamos
 if NOT EXIST F:\departamentos_cs mkdir F:\departamentos_cs
@@ -63,3 +63,39 @@ net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GL_RSecretaria,r
 net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GG_Informatica,full
 net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GL_WInformatica,write
 net share D_Informatica=F:\departamentos_cs\Informatica /GRANT:Cs_GL_RInformatica,read
+REM Aplicamos las ACLs
+REM https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/icacls
+
+icacls F:\departamentos_cs\Servicios_U /GRANT castellon\Servicios_U:(R,W)
+icacls F:\departamentos_cs\Rectorado /GRANT castellon\Rectorado:(R,W)
+icacls F:\departamentos_cs\Secretaria /GRANT castellon\Secretaria:(R,W)
+icacls F:\departamentos_cs\Informatica /GRANT castellon\Informatica:(R,W)
+
+
+
+REM Eliminamos los permisos asignados al grupo 'Usuarios del dominio'
+REM /inheritancelevel: [e - d - r]
+REM     e: Enables inheritance - d: Disables inheritance and copies the ACESS - r: Removes all inherited ACESS
+
+icacls F:\departamentos_cs\departamentos_cs /inheritance:d /T
+icacls F:\departamentos_cs\departamentos_cs /remove:g Usuarios
+icacls F:\departamentos_cs\Rectorado /inheritance:d /T
+icacls F:\departamentos_cs\Rectorado /remove:g Usuarios
+icacls F:\departamentos_cs\Secretaria /inheritance:d /T
+icacls F:\departamentos_cs\Secretaria /remove:g Usuarios
+icacls F:\departamentos_cs\Informatica /inheritance:d /T
+icacls F:\departamentos_cs\Informatica /remove:g Usuarios
+
+
+REM Eliminamos los permisos asignados al grupo 'Usuarios del dominio'
+REM /inheritancelevel: [e - d - r]
+REM     e: Enables inheritance - d: Disables inheritance and copies the ACESS - r: Removes all inherited ACESS
+
+icacls F:\departamentos_cs\Servicios_U /inheritance:d /T
+icacls F:\departamentos_cs\Servicios_U /remove:g Usuarios
+icacls F:\departamentos_cs\Rectorado /inheritance:d /T
+icacls F:\departamentos_cs\Rectorado /remove:g Usuarios
+icacls F:\departamentos_cs\Secretaria /inheritance:d /T
+icacls F:\departamentos_cs\Secretaria /remove:g Usuarios
+icacls F:\departamentos_cs\Informatica /inheritance:d /T
+icacls F:\departamentos_cs\Informatica /remove:g Usuarios
