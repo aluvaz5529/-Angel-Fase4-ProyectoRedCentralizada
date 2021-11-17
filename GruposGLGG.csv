@@ -1,4 +1,4 @@
-:Path:Description:Category:Scope
+:Name:Path:Description:Category:Scope
 :Cs_GL_WServicios_U:OU=Servicios_Universitarios,OU=Ubuntu,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de escritura de los servicios universitarios de upv:Security:Domainlocal
 :Cs_GL_RServicios_U:OU=Servicios_Universitarios,OU=Ubuntu,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de lectura de los servicios universitarios de upv:Security:Domainlocal
 :Cs_GL_WRectorado:OU=Rectorado,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de escritura del rectorado de upv:Security:Domainlocal
