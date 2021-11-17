@@ -41,3 +41,15 @@ icacls C:\Documentación\Finanzas /GRANT smr\Acceso_extra:(R)
 icacls C:\Documentación\Producción /GRANT smr\Acceso_extra:(R)
 icacls C:\Documentación\Servicios /GRANT smr\Acceso_extra:(R)
 icacls C:\Documentación\Ventas /GRANT smr\Acceso_extra:(R)
+
+
+REM esta es la idea el grupo donde estan todos los usuarios con los permisos de lectura y luego 
+@echo off
+REM Comprobamos si existen las carpetas, en caso contrario las creamos
+if NOT EXIST F:\departamentos_cs mkdir F:\departamentos_cs
+if NOT EXIST F:\departamentos_cs\Servicios_Universitarios mkdir F:\departamentos_cs\Servicios_Universitarios
+if NOT EXIST F:\departamentos_cs\Rectorado mkdir F:\departamentos_cs\Rectorado
+if NOT EXIST F:\departamentos_cs\Secretaria mkdir F:\departamentos_cs\Secretaria
+if NOT EXIST F:\departamentos_cs\Servicios mkdir F:\departamentos_cs\Informatica
+REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtraremos los accesos
+net share D_Departamentos=F:\Departamentos_cs /GRANT:Cs_GL_GGcastellon,DC=castellon,DC=upv,DC=es,read
