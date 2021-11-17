@@ -77,8 +77,8 @@ REM Eliminamos los permisos asignados al grupo 'Usuarios del dominio'
 REM /inheritancelevel: [e - d - r]
 REM     e: Enables inheritance - d: Disables inheritance and copies the ACESS - r: Removes all inherited ACESS
 
-icacls F:\departamentos_cs\departamentos_cs /inheritance:d /T
-icacls F:\departamentos_cs\departamentos_cs /remove:g Usuarios
+icacls F:\departamentos_cs\Servicios_U /inheritance:d /T
+icacls F:\departamentos_cs\Servicios_U /remove:g Usuarios
 icacls F:\departamentos_cs\Rectorado /inheritance:d /T
 icacls F:\departamentos_cs\Rectorado /remove:g Usuarios
 icacls F:\departamentos_cs\Secretaria /inheritance:d /T
