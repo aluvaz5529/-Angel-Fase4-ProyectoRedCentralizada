@@ -1,4 +1,4 @@
-#permisos para carpteass del segundo disco (globales)
+#permisos para carpetas del segundo disco (globales)
 $SU = 'F:\ruta servicios universitarios'
 $RE = 'F:\ruto rectorado'
 $SE = 'F:\ruta secretaria'
