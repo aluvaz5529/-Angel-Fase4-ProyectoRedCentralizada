@@ -60,7 +60,7 @@ REM funciona hasta lo de compartir
 @echo off
 REM Comprobamos si existen las carpetas, en caso contrario las creamos
 if NOT EXIST F:\departamentos_cs mkdir F:\departamentos_cs
-if NOT EXIST F:\departamentos_cs\Servicios_U mkdir F:\departamentos_cs\Servicios_Universitarios
+if NOT EXIST F:\departamentos_cs\Servicios_U mkdir F:\departamentos_cs\Servicios_U
 if NOT EXIST F:\departamentos_cs\Rectorado mkdir F:\departamentos_cs\Rectorado
 if NOT EXIST F:\departamentos_cs\Secretaria mkdir F:\departamentos_cs\Secretaria
 if NOT EXIST F:\departamentos_cs\Servicios mkdir F:\departamentos_cs\Informatica
