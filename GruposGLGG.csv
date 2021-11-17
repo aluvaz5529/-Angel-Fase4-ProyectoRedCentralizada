@@ -13,4 +13,4 @@
 :Cs_GG_Secretaria:OU=Secretaria,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo global de secretaria de upv:Security:Global
 :Cs_GG_Informatica:OU=Informatica,OU=W10,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo global del aula de informatica de upv:Security:Global
 #local donde estaran todos los usuarios
-:Cs_GL_changecastellon:OU=Usuarios,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de castellon upv:Security:Domainlocal
+:Cs_GL_GGcastellon:OU=Usuarios,OU=dep-castellon-upv,dc=castellon,dc=upv,dc=es:Grupo Domain local de castellon upv:Security:Domainlocal
