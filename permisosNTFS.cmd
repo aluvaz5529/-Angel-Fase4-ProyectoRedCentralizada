@@ -1,18 +1,4 @@
-@echo off
-REM Comprobamos si existen las carpetas, en caso contrario las creamos
-if NOT EXIST C:\Documentación mkdir C:\Documentación
-if NOT EXIST C:\Documentación\Dirección mkdir C:\Documentación\Dirección
-if NOT EXIST C:\Documentación\Finanzas mkdir C:\Documentación\Finanzas
-if NOT EXIST C:\Documentación\Servicios mkdir C:\Documentación\Servicios
-if NOT EXIST C:\Documentación\Producción mkdir C:\Documentación\Producción
-if NOT EXIST C:\Documentación\Ventas mkdir C:\Documentación\Producción
-REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtraremos los accesos
-net share Documentos_Dirección=C:\Documentación\Dirección /GRANT:Todos,full
-net share Documentos_Finanzas=C:\Documentación\Finanzas /GRANT:Todos,full
-net share Documentos_Producción=C:\Documentación\Producción /GRANT:Todos,full
-net share Documentos_Servicios=C:\Documentación\Servicios /GRANT:Todos,full
-net share Documentos_Ventas=C:\Documentación\Ventas /GRANT:Todos,full
-REM 
+
 REM Aplicamos las ACLs
 REM https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/icacls
 
@@ -52,7 +38,7 @@ if NOT EXIST F:\departamentos_cs\Rectorado mkdir F:\departamentos_cs\Rectorado
 if NOT EXIST F:\departamentos_cs\Secretaria mkdir F:\departamentos_cs\Secretaria
 if NOT EXIST F:\departamentos_cs\Servicios mkdir F:\departamentos_cs\Informatica
 REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtraremos los accesos
-net share D_Departamentos=F:\Departamentos_cs /GRANT:Cs_GL_GGcastellon,DC=castellon,DC=upv,DC=es,read
+net share D_Departamentos=F:\Departamentos_cs /GRANT:Cs_GL_GGcastellon,read
 
 
 
@@ -68,7 +54,6 @@ REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtrarem
 net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GG_Servicios_U,full
 net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GG_RServicios_U,read
 net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GL_WServicios_U,write
-net share D_Servicios_Universitarios=F:\departamentos_cs\Servicios_U /GRANT:Cs_GL_RServicios_U,full
 net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GG_Rectorado,full
 net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_WRectorado,write
 net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_RRectorado,read
