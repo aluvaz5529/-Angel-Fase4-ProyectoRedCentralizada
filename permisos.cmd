@@ -7,7 +7,7 @@ if NOT EXIST F:\departamentos_cs\Secretaria mkdir F:\departamentos_cs\Secretaria
 if NOT EXIST F:\departamentos_cs\Servicios mkdir F:\departamentos_cs\Informatica
 REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtraremos los accesos 
 net share D_Servicios_U=F:\departamentos_cs\Servicios_U  /GRANT:Cs_GG_Rectorado,full
-net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GG_RServiciosU,read
+net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GL_RServiciosU,read
 net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GL_WServiciosU,write
 net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GG_Rectorado,full
 net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_WRectorado,write
