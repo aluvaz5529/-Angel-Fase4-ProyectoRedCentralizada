@@ -9,7 +9,7 @@ REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtrarem
 @echo off
 REM Comprobamos si existen las carpetas, en caso contrario las creamos
 REM Compartimos en red con 'Todos' las carpetas, con los permisos NTFS filtraremos los accesos 
-net share Documentos_Departamentos=F:\departamentos_cs /GRANT:Cs_GL_RServicios_U,read /GRANT:Cs_GL_RInformatica,read /GRANT:Cs_GL_RSecretaria,read /GRANT:Cs_GL_RRectorado,read 
+net share D_Departamentos=F:\departamentos_cs /GRANT:Cs_GL_RServicios_U,read /GRANT:Cs_GL_RInformatica,read /GRANT:Cs_GL_RSecretaria,read /GRANT:Cs_GL_RRectorado,read 
 net share D_Servicios_U=F:\departamentos_cs\Servicios_U /GRANT:Cs_GL_RServicios_U,read /GRANT:Cs_GL_WServicios_U,change
 net share D_Rectorado=F:\departamentos_cs\Rectorado /GRANT:Cs_GL_RRectorado,read /GRANT:Cs_GL_WRectorado,change
 net share D_Secretaria=F:\departamentos_cs\Secretaria /GRANT:Cs_GL_WSecretaria,change /GRANT:Cs_GL_RSecretaria,read
