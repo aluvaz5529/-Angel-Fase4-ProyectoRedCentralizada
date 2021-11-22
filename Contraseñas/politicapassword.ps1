@@ -1,0 +1,1 @@
+Add-ADFineGrainedPasswordPolicySubject -Identity:"CN=Users_Dep_castellon_45,CN=Password Settings Container,CN=System,DC=castellon,DC=upv,DC=es" -Server:"campus-castellon-upv.castellon.upv.es" -Subjects:"CN=Cs_GG_Secretaria,OU=Secretaria,OU=W10,OU=dep-castellon-upv,DC=castellon,DC=upv,DC=es","CN=Cs_GG_Rectorado,OU=Rectorado,OU=W10,OU=dep-castellon-upv,DC=castellon,DC=upv,DC=es"
